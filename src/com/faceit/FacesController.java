@@ -22,21 +22,4 @@ public class FacesController {
             Query query = em.createQuery("select f from Face f");
             return new ArrayList<Face>(query.getResultList());
     }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/bootstrap")
-    public void bootstrap() {
-        Face face1 = new Face();
-        face1.setTitle("Ummm.... yeah");
-        face1.setDescription("Face 1");
-        face1.setUrl("http://i.imgur.com/WVVpPMr.jpg");
-
-        em.persist(face1);
-
-        Face face2 = new Face();
-        face2.setTitle("King of Diamonds in the Barringer Crater");
-        face2.setDescription("Face 2");
-        face2.setUrl("http://i.imgur.com/waMwijR.jpg");
-
-        em.persist(face2);
-    }
 }

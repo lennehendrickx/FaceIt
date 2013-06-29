@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="FaceIt:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/FaceIt_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="FaceIt/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="FaceIt" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="AppEngine API" />
+          <element id="library" level="project" name="spring-3.2.2" />
+          <element id="library" level="project" name="spring-mvc-3.2.2.RELEASE" />
+          <element id="library" level="project" name="com.fasterxml.jackson.core:jackson-databind:2.2.0" />
+          <element id="library" level="project" name="AppEngine ORM" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

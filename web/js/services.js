@@ -5,5 +5,5 @@
 
 angular.module('faceit.services', ['ngResource']).
     factory('Face', function($resource) {
-        return $resource('/api/faces')
+        return $resource('/api/faces/:faceId', {faceId:'@id'})
     })

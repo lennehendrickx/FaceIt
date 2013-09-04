@@ -16,6 +16,10 @@ public class Face {
     private String description;
     private String url;
 
+    public long getId() {
+        return key.getId();
+    }
+
     public String getDescription() {
         return description;
     }

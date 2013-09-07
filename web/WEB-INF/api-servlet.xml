@@ -16,6 +16,19 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
+    <bean name="allFacesFetcher" class="com.faceit.fetcher.AllFacesFetcher">
+        <constructor-arg>
+            <list>
+                <ref bean="databaseFacesFetcher" />
+                <ref bean="redditFetcher" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean name="redditFetcher" class="com.faceit.fetcher.RedditFacesFetcher" />
+
+    <bean name="databaseFacesFetcher" class="com.faceit.fetcher.DatabaseFacesFetcher" />
+
     <context:annotation-config/>
     <tx:annotation-driven/>
     <context:component-scan base-package="com.faceit"/>

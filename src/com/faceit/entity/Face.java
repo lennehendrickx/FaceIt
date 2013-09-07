@@ -17,7 +17,7 @@ public class Face {
     private String url;
 
     public long getId() {
-        return key.getId();
+        return key == null ? 0 : key.getId();
     }
 
     public String getDescription() {

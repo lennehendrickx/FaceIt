@@ -1,8 +1,10 @@
 package com.faceit;
 
 import com.faceit.entity.Face;
+import com.faceit.fetcher.AllFacesFetcher;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import java.util.ArrayList;
 import java.util.Collection;
 
 @Controller
@@ -21,10 +22,12 @@ public class FacesController {
     @PersistenceContext
     private EntityManager em;
 
+    @Autowired
+    private AllFacesFetcher allFacesFetcher;
+
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody Collection<Face> getFaces() {
-            Query query = em.createQuery("select f from Face f");
-            return new ArrayList<Face>(query.getResultList());
+        return allFacesFetcher.fetch();
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)

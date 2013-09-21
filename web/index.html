@@ -1,19 +1,23 @@
 <!doctype html>
-<html lang="en" ng-app="faceit">
+<html lang="en" id="ng-app" ng-app="faceit">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
+  <title>Faceit App</title>
   <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
 </head>
 <body>
   <div ng-view></div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  -->
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular/angular-resource.js"></script>
+  <!--[if lte IE 8]>
+  <script>
+      window.myCustomTags = ['thumbnails', 'thumbnail'];
+  </script>
+  <script src="lib/angular-ui-ie-shiv.js"></script>
+  <script src="lib/json3.min.js"></script>
+  <![endif]-->
+  <script src="lib/angular/angular.min-1.0.8.js"></script>
+  <script src="lib/angular/angular-resource.min-1.0.8.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>

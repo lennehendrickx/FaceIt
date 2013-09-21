@@ -1,12 +1,7 @@
 <div class="container-fluid">
     <div class="row-fluid">
-            <!--Body content-->
-
-            <ul class="faces thumbnails">
-                <li ng-repeat="face in faces" class="span3">
-                    <a href="#/face/{{face.id}}" class="thumbnail"><img width="300" ng-src="{{face.url}}"></a>
-                </li>
-            </ul>
-
+        <thumbnails>
+            <thumbnail ng-repeat="face in faces" link="#/face/{{face.id}}" image-url="{{face.url}}" width="300" class="span3" />
+        </thumbnails>
     </div>
 </div>
